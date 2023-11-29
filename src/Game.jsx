@@ -4,7 +4,7 @@ function Square({ value, win, onSquareClick }) {
   return (
     <button
       className={
-        'float-left -mr-0.5 -mt-0.5 h-14 w-14 cursor-pointer select-none border-2 border-solid border-neutral-500 bg-neutral-800 text-2xl text-slate-200' +
+        'float-left -mr-0.5 -mt-0.5 h-16 w-16 cursor-pointer select-none border-2 border-solid border-neutral-500 bg-neutral-800 text-2xl text-slate-200' +
         (win ? ' text-green-300' : '')
       }
       onClick={onSquareClick}
@@ -102,7 +102,7 @@ function Board({ xIsNext, squares, handlePlay }) {
 export default function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)])
   const [currentMove, setCurrentMove] = useState(0)
-  const [playList, setPlayList] = useState([true])
+  const [playList, setPlayList] = useState([Math.floor(Math.random() * 2)])
   const currentSquares = history[currentMove]
   const xIsNext = playList[currentMove]
 
@@ -143,7 +143,7 @@ export default function Game() {
           handlePlay={handlePlay}
         />
         <button
-          className="w-[10.5rem] select-none rounded border-2 border-solid border-neutral-600 bg-neutral-800 text-slate-200"
+          className="w-[188px] select-none rounded border-2 border-solid border-neutral-600 bg-neutral-800 text-slate-200"
           onClick={handleRestart}
         >
           Restart
