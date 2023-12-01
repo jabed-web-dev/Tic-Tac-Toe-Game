@@ -1,8 +1,9 @@
 window.addEventListener('load', () => {
   const html = document.documentElement,
+    button = document.createElement('button'),
     dark = '🌙',
-    light = '🔆',
-    button = document.createElement('button');
+    light = '🔆';
+
 
   let styles = {
     position: 'absolute',
