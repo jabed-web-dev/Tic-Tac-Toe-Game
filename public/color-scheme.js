@@ -1,9 +1,8 @@
 window.addEventListener('load', () => {
   const html = document.documentElement,
     button = document.createElement('button'),
-    dark = '🌙',
-    light = '🔆';
-
+    light = '🔆',
+    dark = '🌙';
 
   let styles = {
     position: 'absolute',
@@ -33,10 +32,10 @@ window.addEventListener('load', () => {
     (!('color-scheme' in localStorage) &&
       window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    button.innerHTML = dark;
+    button.innerText = dark;
     html.classList.add('dark');
   } else {
-    button.innerHTML = light;
+    button.innerText = light;
     html.classList.remove('dark');
   }
 
@@ -47,11 +46,11 @@ window.addEventListener('load', () => {
       (!('color-scheme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      button.innerHTML = light;
+      button.innerText = light;
       html.classList.remove('dark');
       localStorage.setItem('color-scheme', 'light');
     } else {
-      button.innerHTML = dark;
+      button.innerText = dark;
       html.classList.add('dark');
       localStorage.setItem('color-scheme', 'dark');
     }
